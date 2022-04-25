@@ -2,7 +2,7 @@ const gulp = require('gulp'),
 		source = require('vinyl-source-stream'),
 		browserify = require('browserify'),
 		sass = require('gulp-sass'),
-		dist = './dist';
+		dist = './admin';
 
 gulp.task('copy-html', () => {
 	return gulp.src('./app/src/index.html')
