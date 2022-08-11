@@ -9,12 +9,15 @@
 	text-decoration: none;
 }
 
-body {
-	max-width: 100%;
-
-	width: auto;
+p {
+	margin-bottom: 20px;
 }
 
-.create-page {
-	margin-bottom: 20px;
+ol,
+ul {
+	margin-bottom: 40px;
+}
+
+ol {
+	padding-left: 20px;
 }

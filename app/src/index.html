@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<!-- create page -->
-	<div class="create-page">
-		<input class="create-page_input" type="text">
-		<button class="create-page_button">Создать страницу</button>
-	</div>
+    <div id="app">
+        <input
+            v-model="newPageName"
+            type="text"
+        />
+        <button v-on:click="createPage">Создать страницу</button>
+        <p>Стандартный вывод через ol:</p>
+        <ol>
+            <li
+                v-for="(page, index) in pageList"
+                :key="index"
+            >
+                {{ page }} <a href="#" v-on:click="deletePage(page)">(X)</a>
+            </li>
+        </ol>
+        <p>Можно еще вывести через ul, передав в цикле индекс элемента</p>
+        <ul>
+            <li
+                v-for="(page, index) in pageList"
+                :key="index"
+            >
+                {{index}}. {{ page }} <a href="#" v-on:click="deletePage(page)">(X)</a>
+            </li>
+        </ul>
+    </div>
 
-	<!-- delete page -->
-	<div class="delete-page">
-		<input class="delete-page_input" type="text">
-		<button class="delete-page_button">Удалить страницу</button>
-	</div>
-
-	<script src="bundle.js"></script>
+    <script src="bundle.js"></script>
 </body>
 </html>
