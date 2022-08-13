@@ -1,4 +1,4 @@
-const Vue = require("vue/dist/vue");
+/* const Vue = require("vue/dist/vue");
 const axios = require("axios");
 
 new Vue({
@@ -33,4 +33,12 @@ new Vue({
     created() {
         this.updatePageList();
     },
-});
+}); */
+
+const Editor = require("./editor");
+
+window.editor = new Editor();
+
+window.onload = () => {
+    window.editor.open("index.html");
+}
